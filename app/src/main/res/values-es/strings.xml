@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NoteKeeper</string>
+    <string name="action_settings">Configuracion</string>
+    <string name="title_activity_note_list">Lista Notas</string>
+    <string name="title_activity_list_course_notes">Lista Course</string>
+    <string name="navigation_drawer_open">Abrir</string>
+    <string name="navigation_drawer_close">Cerrar</string>
+    <string name="nav_header_title">Android</string>
+    <string name="nav_header_subtitle">Android</string>
+    <string name="nav_header_desc">Cabezara</string>
+    <string name="menu_home">Casa</string>
+    <string name="menu_gallery">Galeria</string>
+    <string name="menu_slideshow">nose</string>
+    <string name="title_activity_test">Test</string>
+    <string name="course_title">Title Curso</string>
+    <string name="title_note">Title Note</string>
+    <string name="send">Enviar</string>
+    <string name="share_text">No crees q ya enviaste mucho</string>
+    <string name="amount_course_notes">Cantidad course y notas</string>
+    <string name="how_many_course_message">Tu tienes %1$d Notas | and %2$d Cursos</string>
+</resources>

@@ -1,20 +1,41 @@
 package com.jwhh.notekeeper
 
+import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import com.jwhh.notekeeper.databinding.ActivityMainBinding
+import com.jwhh.notekeeper.viewmodel.ListCourseNotesActivityViewModel
+import com.jwhh.notekeeper.viewmodel.MainViewModel
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
+    private val tag = this::class.java.simpleName
     private var notePosition = POSITION_NOT_SET
+
+    val helper = NoteGetLocationHelper(this, lifecycle)
+
+    private val viewModel: MainViewModel by lazy {
+        ViewModelProviders.of(this).get(MainViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+        buttonSurvey.setOnClickListener {
+            startActivity(Intent(this, SurveyActivity::class.java))
+        }
+
         setSupportActionBar(toolbar)
 
         val adapterCourses = ArrayAdapter<CourseInfo>(this,
@@ -24,27 +45,31 @@ class MainActivity : AppCompatActivity() {
 
         spinnerCourses.adapter = adapterCourses
 
-        notePosition = savedInstanceState?.getInt(NOTE_POSITION, POSITION_NOT_SET) ?:
-                intent.getIntExtra(NOTE_POSITION, POSITION_NOT_SET)
+        notePosition = savedInstanceState?.getInt(NOTE_POSITION, POSITION_NOT_SET)
+                ?: intent.getIntExtra(NOTE_POSITION, POSITION_NOT_SET)
 
-        if(notePosition != POSITION_NOT_SET)
+        if (notePosition != POSITION_NOT_SET)
             displayNote()
         else {
-            DataManager.notes.add(NoteInfo())
-            notePosition = DataManager.notes.lastIndex
+            createNote()
         }
+
+        Log.d(tag, "OnCreate")
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    private fun createNote() {
+        notePosition = viewModel.createNewNote()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState?.putInt(NOTE_POSITION, notePosition)
+        outState.putInt(NOTE_POSITION, notePosition)
     }
 
     private fun displayNote() {
         val note = DataManager.notes[notePosition]
-        textNoteTitle.setText(note.title)
-        textNoteText.setText(note.text)
-
+        viewModel.displayNote(notePosition)
+        Log.i(tag, "Displaying not for position $notePosition")
         val coursePosition = DataManager.courses.values.indexOf(note.course)
         spinnerCourses.setSelection(coursePosition)
     }
@@ -62,6 +87,7 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_settings -> true
             R.id.action_next -> {
+                helper.sendMessage(DataManager.notes[notePosition])
                 moveNext()
                 true
             }
@@ -76,9 +102,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
-        if(notePosition >= DataManager.notes.lastIndex) {
+        if (notePosition >= DataManager.notes.lastIndex) {
+            Log.i(tag, "Cambio de icono $notePosition max value of notes ${DataManager.notes.lastIndex}")
             val menuItem = menu?.findItem(R.id.action_next)
-            if(menuItem != null) {
+            if (menuItem != null) {
                 menuItem.icon = getDrawable(R.drawable.ic_block_white_24dp)
                 menuItem.isEnabled = false
             }
@@ -90,13 +117,11 @@ class MainActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         saveNote()
+        Log.d(tag, "OnPause")
     }
 
     private fun saveNote() {
-        val note = DataManager.notes[notePosition]
-        note.title = textNoteTitle.text.toString()
-        note.text = textNoteText.text.toString()
-        note.course = spinnerCourses.selectedItem as CourseInfo
+        viewModel.updateNote(notePosition, spinnerCourses.selectedItem as CourseInfo)
     }
 }
 

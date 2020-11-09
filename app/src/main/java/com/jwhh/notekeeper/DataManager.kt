@@ -23,7 +23,20 @@ object DataManager {
         courses.set(course.courseId, course)
     }
 
-    private fun initializeNotes() {
+    fun addNote(course: CourseInfo?, noteTitle: String, noteText: String): Int {
+        val note = NoteInfo(course, noteTitle, noteText)
+        notes.add(note)
+        return notes.lastIndex
+    }
+
+    fun findNote(course: CourseInfo, noteTitle: String, noteText: String): NoteInfo? {
+        for (note in notes)
+            if (course == note.course && noteTitle == note.title && noteText == note.text)
+                return note
+        return null
+    }
+
+     fun initializeNotes() {
 
         var course = courses["android_intents"]!!
         var note = NoteInfo(course, "Dynamic intent resolution",
@@ -57,5 +70,4 @@ object DataManager {
                 "Remember to include SerialVersionUID to assure version compatibility")
         notes.add(note)
     }
-
 }

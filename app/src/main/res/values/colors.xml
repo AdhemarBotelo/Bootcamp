@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#6900ff</color>
+    <color name="colorPrimaryDark">#1100ca</color>
+    <color name="colorAccent">#a64aff</color>
+    <color name="colorOrangeDark">#b01a10</color>
+
+    <color name="TitleTextColor">#fF9B69</color>
+    <color name="TextColor">#a7305d</color>
+    <color name="popular">#ff76a5</color>
+    <color name="start">#ff0057</color>
+
+        <color name="youWinDark">#35A571</color>
+    <color name="youWinBackground">#B7F8C9</color>
+    <color name="gameOverBackground">#f8bbd0</color>
 </resources>
