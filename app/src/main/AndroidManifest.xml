@@ -3,6 +3,11 @@
     package="com.jwhh.notekeeper">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <permission
+        android:name="my.own.permission"
+        android:protectionLevel="signature" />
 
     <application
         android:allowBackup="true"
@@ -11,9 +16,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".MyContentProviderActivity"></activity>
+        <activity android:name=".MyBroadcastReceiverActivity" />
+
+        <service
+            android:name=".services.MyBoundService"
+            android:exported="false" />
+        <service
+            android:name=".services.MyMessengerService"
+            android:exported="false"
+            android:process=":my_own_process" />
+
+        <activity android:name=".MyServiceActivity" />
         <activity
             android:name=".SurveyActivity"
-            android:label="@string/title_activity_survey"></activity>
+            android:label="@string/title_activity_survey" />
         <activity android:name=".ListDogActivity" />
         <activity
             android:name=".ListCourseNotesActivity"
@@ -33,6 +50,33 @@
             android:name=".NoteListActivity"
             android:label="NoteKeeper"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <receiver android:name=".receivers.MyFirstReceiver">
+            <intent-filter android:priority="10">
+                <action android:name="my.custom.action.name" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receivers.MySecondReceiver">
+            <intent-filter android:priority="20">
+                <action android:name="my.custom.action.name" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".MyBroadcastReceiverActivity$MyThirdReceiverInner">
+            <intent-filter android:priority="30">
+                <action android:name="my.custom.action.name" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receivers.MyFourthReceiver">
+            <intent-filter>
+                <action android:name="my.custom.action.name" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receivers.MyReceiver" />
+        <receiver android:name=".receivers.IncomingReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

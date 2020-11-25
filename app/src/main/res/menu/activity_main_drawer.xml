@@ -12,6 +12,18 @@
             android:id="@+id/nav_course"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Courses" />
+        <item
+            android:id="@+id/nav_services"
+            android:icon="@drawable/ic_forward_white_24dp"
+            android:title="Services" />
+        <item
+            android:id="@+id/nav_receivers"
+            android:icon="@drawable/ic_add_white_24dp"
+            android:title="BroadcastReceiver" />
+        <item
+            android:id="@+id/nav_contentProvider"
+            android:icon="@drawable/ic_forward_white_24dp"
+            android:title="Content Provider" />
     </group>
     <item android:title="Communicate">
         <menu>

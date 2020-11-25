@@ -106,6 +106,18 @@ class ListCourseNotesActivity : AppCompatActivity(), NavigationView.OnNavigation
             R.id.nav_send -> {
                 handleSelection(R.string.send)
             }
+            R.id.nav_services -> {
+                val intent = Intent(this, MyServiceActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.nav_receivers -> {
+                val intent = Intent(this, MyBroadcastReceiverActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.nav_contentProvider -> {
+                val intent = Intent(this, MyContentProviderActivity::class.java)
+                startActivity(intent)
+            }
             R.id.action_count_note_courses -> {
                 val message = getString(R.string.how_many_course_message, DataManager.notes.size, DataManager.courses.size)
                 Snackbar.make(recyclerListNotes, message, Snackbar.LENGTH_LONG).show()
@@ -125,7 +137,6 @@ class ListCourseNotesActivity : AppCompatActivity(), NavigationView.OnNavigation
             }
         }
     }
-
 
 
     private fun handleSelection(stringId: Int) {
