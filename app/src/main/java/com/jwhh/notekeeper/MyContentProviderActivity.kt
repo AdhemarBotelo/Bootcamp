@@ -2,6 +2,7 @@ package com.jwhh.notekeeper
 
 import android.content.ContentValues
 import android.database.sqlite.SQLiteDatabase
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.BaseColumns
@@ -57,13 +58,17 @@ class MyContentProviderActivity : AppCompatActivity() {
         val selectionArgs = arrayOf(rowid)
         val sortOrder = null
 
-        val cursor = database.query(NationContract.NationEntry.TABLE_NAME,
-                projection,
-                selection,
-                selectionArgs,
-                null,
-                null,
-                sortOrder)
+//        val cursor = database.query(NationContract.NationEntry.TABLE_NAME,
+//                projection,
+//                selection,
+//                selectionArgs,
+//                null,
+//                null,
+//                sortOrder)
+
+        val uri = Uri.withAppendedPath(NationContract.NationEntry.CONTENT_URI, rowid)
+        Log.i(TAG, "" + uri)
+        val cursor = contentResolver.query(uri, projection, selection, selectionArgs, sortOrder)
         with(cursor) {
             if (cursor != null && moveToNext()) {
                 //cursor  -1 0 1 2 3
@@ -113,10 +118,15 @@ class MyContentProviderActivity : AppCompatActivity() {
         val selection = null
         val selectionArgs = null
         val sortOrder = null
-        val cursor = database.query(NationContract.NationEntry.TABLE_NAME,
-                projection,
-                selection,
-                selectionArgs, null, null, sortOrder)
+//        val cursor = database.query(NationContract.NationEntry.TABLE_NAME,
+//                projection,
+//                selection,
+//                selectionArgs, null, null, sortOrder)
+
+        val uri = NationContract.NationEntry.CONTENT_URI
+        Log.i(TAG, "" + uri)
+        val cursor = contentResolver.query(uri, projection, selection, selectionArgs, sortOrder)
+
         if (cursor != null) {
             //cursor  -1 0 1 2 3
             with(cursor) {
@@ -143,7 +153,11 @@ class MyContentProviderActivity : AppCompatActivity() {
             put(NationContract.NationEntry.COLUMN_CONTINENT, continentName)
         }
 
-        val rowId = database.insert(NationContract.NationEntry.TABLE_NAME, null, contentValues)
-        Log.i(TAG, "Items inserted in table with row id: " + rowId);
+//        val rowId = database.insert(NationContract.NationEntry.TABLE_NAME, null, contentValues)
+//        Log.i(TAG, "Items inserted in table with row id: " + rowId);
+
+        val uri = NationContract.NationEntry.CONTENT_URI
+        val uriRowInserted = contentResolver.insert(uri, contentValues)
+        Log.i(TAG, "Items inserted at: " + uriRowInserted);
     }
 }

@@ -9,6 +9,14 @@
         android:name="my.own.permission"
         android:protectionLevel="signature" />
 
+    <permission
+        android:name="my.read.permission"
+        android:protectionLevel="normal" />
+
+    <permission
+        android:name="my.write.permission"
+        android:protectionLevel="normal" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_round"
@@ -77,6 +85,13 @@
                 <action android:name="android.intent.action.PHONE_STATE" />
             </intent-filter>
         </receiver>
+
+        <provider
+            android:name=".data.NationProvider"
+            android:authorities="com.jwhh.notekeeper.data.NationProvider"
+            android:exported="true"
+            android:readPermission="my.read.permission"
+            android:writePermission="my.write.permission"></provider>
     </application>
 
 </manifest>
