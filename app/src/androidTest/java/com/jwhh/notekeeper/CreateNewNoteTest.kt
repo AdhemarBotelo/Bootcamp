@@ -13,6 +13,9 @@ import org.hamcrest.Matchers.*
 import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.Espresso.pressBack
 import androidx.test.espresso.action.ViewActions.closeSoftKeyboard
+import com.jwhh.notekeeper.data.DataManager
+import com.jwhh.notekeeper.presentation.CourseInfo
+import com.jwhh.notekeeper.presentation.ListCourseNotesActivity
 
 @RunWith(AndroidJUnit4::class)
 class CreateNewNoteTest{

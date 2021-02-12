@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/titleFragment"
-        android:name="com.jwhh.notekeeper.fragments.TitleFragment"
+        android:name="com.jwhh.notekeeper.presentation.fragments.TitleFragment"
         android:label="fragment_title"
         tools:layout="@layout/fragment_title" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
-        android:name="com.jwhh.notekeeper.fragments.GameFragment"
+        android:name="com.jwhh.notekeeper.presentation.fragments.GameFragment"
         android:label="fragment_game"
         tools:layout="@layout/fragment_game" >
         <action
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameWonFragment"
-        android:name="com.jwhh.notekeeper.fragments.GameWonFragment"
+        android:name="com.jwhh.notekeeper.presentation.fragments.GameWonFragment"
         android:label="fragment_game_won"
         tools:layout="@layout/fragment_game_won" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameOverFragment"
-        android:name="com.jwhh.notekeeper.fragments.GameOverFragment"
+        android:name="com.jwhh.notekeeper.presentation.fragments.GameOverFragment"
         android:label="fragment_game_over"
         tools:layout="@layout/fragment_game_over" >
         <action

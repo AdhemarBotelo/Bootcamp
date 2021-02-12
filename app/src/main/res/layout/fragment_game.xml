@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".fragments.GameFragment">
+    tools:context=".presentation.fragments.GameFragment">
 
     <data>
 
         <variable
             name="game"
-            type="com.jwhh.notekeeper.fragments.GameFragment" />
+            type="com.jwhh.notekeeper.presentation.fragments.GameFragment" />
     </data>
 
     <ScrollView

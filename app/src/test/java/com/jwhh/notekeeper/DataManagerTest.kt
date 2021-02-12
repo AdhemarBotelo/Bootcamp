@@ -1,5 +1,6 @@
 package com.jwhh.notekeeper
 
+import com.jwhh.notekeeper.data.DataManager
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test

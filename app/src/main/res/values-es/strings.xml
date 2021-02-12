@@ -36,4 +36,6 @@
     <string name="extras">Extras</string>
     <string name="dogs">Perros</string>
     <string name="go_trivia">ir a Trivia</string>
+    <string name="trivia">trivia</string>
+    <string name="broadcast_receivers">Broadcast Receivers</string>
 </resources>

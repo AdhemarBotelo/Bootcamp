@@ -7,13 +7,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.jwhh.notekeeper.viewmodel.MainViewModel" />
+            type="com.jwhh.notekeeper.presentation.viewmodel.MainViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".presentation.MainActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"

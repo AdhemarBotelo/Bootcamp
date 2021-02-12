@@ -24,28 +24,28 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListNationsActivity"></activity>
+        <activity android:name=".presentation.ListNationsActivity" android:label="Natios"></activity>
 
         <service
-            android:name=".services.MyBoundService"
+            android:name="com.jwhh.notekeeper.presentation.services.MyBoundService"
             android:exported="false" />
         <service
-            android:name=".services.MyMessengerService"
+            android:name="com.jwhh.notekeeper.presentation.services.MyMessengerService"
             android:exported="false"
             android:process=":my_own_process" />
 
         <activity
             android:name=".presentation.news.NewsActivity"
             android:label="@string/news" />
-        <activity android:name=".MyContentProviderActivity" />
-        <activity android:name=".MyBroadcastReceiverActivity" />
-        <activity android:name=".MyServiceActivity" />
+        <activity android:name=".presentation.MyContentProviderActivity"  android:label="@string/content_provider" />
+        <activity android:name=".presentation.MyBroadcastReceiverActivity" android:label="@string/broadcast_receivers" />
+        <activity android:name=".presentation.MyServiceActivity" android:label="@string/services" />
         <activity
-            android:name=".SurveyActivity"
+            android:name=".presentation.SurveyActivity"
             android:label="@string/title_activity_survey" />
-        <activity android:name=".ListDogActivity" />
+        <activity android:name=".presentation.ListDogActivity" android:label="@string/dogs" />
         <activity
-            android:name=".ListCourseNotesActivity"
+            android:name=".presentation.ListCourseNotesActivity"
             android:label="@string/title_activity_list_course_notes"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -55,36 +55,36 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.MainActivity"
             android:label="Edit Note"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".NoteListActivity"
-            android:label="NoteKeeper"
+            android:name=".presentation.NoteListActivity"
+            android:label="Notes"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <receiver android:name=".receivers.MyFirstReceiver">
+        <receiver android:name="com.jwhh.notekeeper.presentation.receivers.MyFirstReceiver">
             <intent-filter android:priority="10">
                 <action android:name="my.custom.action.name" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".receivers.MySecondReceiver">
+        <receiver android:name="com.jwhh.notekeeper.presentation.receivers.MySecondReceiver">
             <intent-filter android:priority="20">
                 <action android:name="my.custom.action.name" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".MyBroadcastReceiverActivity$MyThirdReceiverInner">
+        <receiver android:name=".presentation.MyBroadcastReceiverActivity$MyThirdReceiverInner">
             <intent-filter android:priority="30">
                 <action android:name="my.custom.action.name" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".receivers.MyFourthReceiver">
+        <receiver android:name="com.jwhh.notekeeper.presentation.receivers.MyFourthReceiver">
             <intent-filter>
                 <action android:name="my.custom.action.name" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".receivers.MyReceiver" />
-        <receiver android:name=".receivers.IncomingReceiver">
+        <receiver android:name="com.jwhh.notekeeper.presentation.receivers.MyReceiver" />
+        <receiver android:name="com.jwhh.notekeeper.presentation.receivers.IncomingReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.PHONE_STATE" />
             </intent-filter>
