@@ -32,9 +32,6 @@ class MainActivity : AppCompatActivity() {
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
-        buttonSurvey.setOnClickListener {
-            startActivity(Intent(this, SurveyActivity::class.java))
-        }
 
         setSupportActionBar(toolbar)
 

@@ -3,28 +3,19 @@ package com.jwhh.notekeeper
 import androidx.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.core.view.GravityCompat
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.appcompat.widget.Toolbar
-import android.view.Gravity
 import android.view.MenuItem
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelStore
-import androidx.lifecycle.ViewModelStoreOwner
+import com.jwhh.notekeeper.presentation.news.NewsActivity
 import com.jwhh.notekeeper.viewmodel.ListCourseNotesActivityViewModel
 import kotlinx.android.synthetic.main.activity_list_course_notes.*
 import kotlinx.android.synthetic.main.app_bar_list_note.*
@@ -99,12 +90,15 @@ class ListCourseNotesActivity : AppCompatActivity(), NavigationView.OnNavigation
                 handleDisplaySelection(item.itemId)
                 viewModel.navDrawerDisplaySelection = item.itemId
             }
-            R.id.nav_share -> {
+            R.id.nav_dogs -> {
                 val activityIntent = Intent(this, ListDogActivity::class.java)
                 startActivity(activityIntent)
             }
-            R.id.nav_send -> {
-                handleSelection(R.string.send)
+            R.id.nav_news -> {
+                startActivity(Intent(this, NewsActivity::class.java))
+            }
+            R.id.nav_trivia -> {
+                startActivity(Intent(this, SurveyActivity::class.java))
             }
             R.id.nav_services -> {
                 val intent = Intent(this, MyServiceActivity::class.java)

@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">NoteKeeper</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_note_list">NoteListActivity</string>
-    <string name="title_activity_list_course_notes">ListCourseNotesActivity</string>
+    <string name="title_activity_note_list">Note List</string>
+    <string name="title_activity_list_course_notes">List Course And Notes</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Learning Android</string>
+    <string name="nav_header_subtitle">adbotelo@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
     <string name="menu_home">Home</string>
@@ -20,7 +20,7 @@
     <string name="amount_course_notes">Amount of Course Notes</string>
     <string name="how_many_course_message">You have %1$d Notes | and %2$d Courses</string>
     <string name="likes">Likes</string>
-    <string name="title_activity_survey">SurveyActivity</string>
+    <string name="title_activity_survey">Android Survey</string>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
@@ -31,4 +31,14 @@
     <string name="take_survey">Take Survey</string>
     <string name="submit">Submit</string>
     <string name="try_again">Try again</string>
+    <string name="error_news">We get an error trying to get the news sorry and try again</string>
+    <string name="notes">Notes</string>
+    <string name="courses">Courses</string>
+    <string name="news">News</string>
+    <string name="services">Services</string>
+    <string name="broadcastreceiver">BroadcastReceiver</string>
+    <string name="content_provider">Content Provider</string>
+    <string name="extras">Extras</string>
+    <string name="dogs">Dogs</string>
+    <string name="go_trivia">Go Trivia</string>
 </resources>

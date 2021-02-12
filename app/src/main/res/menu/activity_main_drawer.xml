@@ -7,34 +7,38 @@
         <item
             android:id="@+id/nav_notes"
             android:icon="@drawable/ic_baseline_event_note_24"
-            android:title="Notes" />
+            android:title="@string/notes" />
         <item
             android:id="@+id/nav_course"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Courses" />
+            android:title="@string/courses" />
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@android:drawable/ic_dialog_info"
+            android:title="@string/news" />
         <item
             android:id="@+id/nav_services"
             android:icon="@drawable/ic_forward_white_24dp"
-            android:title="Services" />
+            android:title="@string/services" />
         <item
             android:id="@+id/nav_receivers"
-            android:icon="@drawable/ic_add_white_24dp"
-            android:title="BroadcastReceiver" />
+            android:icon="@android:drawable/ic_lock_silent_mode_off"
+            android:title="@string/broadcastreceiver" />
         <item
             android:id="@+id/nav_contentProvider"
-            android:icon="@drawable/ic_forward_white_24dp"
-            android:title="Content Provider" />
+            android:icon="@android:drawable/stat_notify_sdcard"
+            android:title="@string/content_provider" />
     </group>
-    <item android:title="Communicate">
+    <item android:title="@string/extras">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_dogs"
                 android:icon="@drawable/ic_baseline_event_note_24"
-                android:title="Share" />
+                android:title="@string/dogs" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_trivia"
                 android:icon="@drawable/ic_menu_gallery"
-                android:title="Send" />
+                android:title="@string/go_trivia" />
             <item
                 android:id="@+id/action_count_note_courses"
                 android:icon="@android:drawable/btn_star"

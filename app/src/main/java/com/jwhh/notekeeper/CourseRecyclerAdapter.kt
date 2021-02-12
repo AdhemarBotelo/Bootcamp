@@ -31,7 +31,7 @@ class CourseRecyclerAdapter(private val context: Context, private val courses: L
 
         init {
             itemView?.setOnClickListener {
-                Snackbar.make(it, courses[coursePosition]?.title, Snackbar.LENGTH_LONG).show()
+                Snackbar.make(it, courses[coursePosition].title, Snackbar.LENGTH_LONG).show()
             }
         }
     }

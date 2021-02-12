@@ -19,4 +19,21 @@
     <string name="share_text">No crees q ya enviaste mucho</string>
     <string name="amount_course_notes">Cantidad course y notas</string>
     <string name="how_many_course_message">Tu tienes %1$d Notas | and %2$d Cursos</string>
+    <string name="likes">likes</string>
+    <string name="title_activity_survey">Encuesta</string>
+    <string name="hello_world">hola mundo</string>
+    <string name="hello_blank_fragment">hola fragmento vacio</string>
+    <string name="take_survey">tomar encuesta</string>
+    <string name="submit">Enviar</string>
+    <string name="error_news">tuvimos un error al obtener las noticias trate nuevamente</string>
+    <string name="try_again">trate nuevamente</string>
+    <string name="notes">Notas</string>
+    <string name="courses">Cursos</string>
+    <string name="news">Noticias</string>
+    <string name="services">Servicios</string>
+    <string name="broadcastreceiver">Broadcast receivers</string>
+    <string name="content_provider">Proveedores de contenido</string>
+    <string name="extras">Extras</string>
+    <string name="dogs">Perros</string>
+    <string name="go_trivia">ir a Trivia</string>
 </resources>
