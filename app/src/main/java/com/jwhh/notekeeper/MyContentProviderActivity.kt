@@ -1,12 +1,13 @@
 package com.jwhh.notekeeper
 
 import android.content.ContentValues
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.BaseColumns
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.jwhh.notekeeper.data.NationContract
 import com.jwhh.notekeeper.data.NationDBHelper
@@ -113,6 +114,8 @@ class MyContentProviderActivity : AppCompatActivity() {
     }
 
     private fun queryAndDisplayAll() {
+        val intent = Intent(this, ListNationsActivity::class.java)
+        startActivity(intent)
 
         val projection = arrayOf(BaseColumns._ID, NationContract.NationEntry.COLUMN_COUNTRY, NationContract.NationEntry.COLUMN_CONTINENT)
         val selection = null

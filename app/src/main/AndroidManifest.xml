@@ -17,13 +17,14 @@
         android:protectionLevel="normal" />
 
     <application
-        android:allowBackup="true"
         android:name=".presentation.App"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ListNationsActivity"></activity>
 
         <service
             android:name=".services.MyBoundService"
@@ -33,7 +34,9 @@
             android:exported="false"
             android:process=":my_own_process" />
 
-        <activity android:name=".presentation.news.NewsActivity" android:label="@string/news"></activity>
+        <activity
+            android:name=".presentation.news.NewsActivity"
+            android:label="@string/news" />
         <activity android:name=".MyContentProviderActivity" />
         <activity android:name=".MyBroadcastReceiverActivity" />
         <activity android:name=".MyServiceActivity" />
